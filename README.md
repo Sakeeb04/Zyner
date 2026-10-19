@@ -41,9 +41,12 @@ Then open the local URL (usually `http://localhost:3000`) in your browser.
 ## Design Choices & Rationale
 
 - **Colors (Cool Modern Developer Palette):**
-  - Deep Midnight background (`#080c14`) and Slate surfaces (`#0f172a`) to eliminate eye strain.
-  - Vibrant Electric Cyan accent (`#38bdf8` / `#0ea5e9`) representing high-speed network throughput and modern infrastructure.
-  - Soft ice-blue hairline borders (`rgba(56, 189, 248, 0.12)`) and icy white typography (`#f8fafc`).
+  - Deep Midnight background (`#080c14`) and Slate surfaces (`#0f172a`) in Dark Mode.
+  - Crisp Snow White (`#f8fafc`) and Pure White surfaces (`#ffffff`) in Light Mode.
+  - Vibrant Electric Cyan accent (`#38bdf8` / `#0ea5e9`).
+- **Dark & Light Mode Switcher:**
+  - One-click toggle in the header and mobile menu with animated sun/moon icons.
+  - Automatically respects user system preferences and saves choice to `localStorage`.
 - **Typography:**
   - `Plus Jakarta Sans` for clean, modern headings and body text.
   - `JetBrains Mono` for command-line snippets and technical tags.

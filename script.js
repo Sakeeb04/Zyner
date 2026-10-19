@@ -4,6 +4,39 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Dark & Light Mode Theme Switcher
+  const themeToggle = document.getElementById('themeToggle');
+  const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('japolic-theme', theme);
+    if (mobileThemeToggle) {
+      const themeText = mobileThemeToggle.querySelector('.theme-text');
+      if (themeText) {
+        themeText.textContent = theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+      }
+    }
+  }
+
+  const savedTheme = localStorage.getItem('japolic-theme');
+  const systemPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  const initialTheme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
+  applyTheme(initialTheme);
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+  if (mobileThemeToggle) {
+    mobileThemeToggle.addEventListener('click', toggleTheme);
+  }
+
   // 1. Mobile Menu Toggle
   const mobileToggle = document.getElementById('mobileToggle');
   const mobileDrawer = document.getElementById('mobileDrawer');

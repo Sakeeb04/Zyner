@@ -40,10 +40,10 @@ Then open the local URL (usually `http://localhost:3000`) in your browser.
 
 ## Design Choices & Rationale
 
-- **Colors:**
-  - Dark background (`#0b0d11`) — standard for developer infrastructure tools to reduce eye strain.
-  - Warm amber accent (`#f59e0b`) — chosen to represent high-speed NVMe flash storage and active cache.
-  - Surface cards (`#12161f`) with subtle borders for clean visual hierarchy.
+- **Colors (Cool Modern Developer Palette):**
+  - Deep Midnight background (`#080c14`) and Slate surfaces (`#0f172a`) to eliminate eye strain.
+  - Vibrant Electric Cyan accent (`#38bdf8` / `#0ea5e9`) representing high-speed network throughput and modern infrastructure.
+  - Soft ice-blue hairline borders (`rgba(56, 189, 248, 0.12)`) and icy white typography (`#f8fafc`).
 - **Typography:**
   - `Plus Jakarta Sans` for clean, modern headings and body text.
   - `JetBrains Mono` for command-line snippets and technical tags.

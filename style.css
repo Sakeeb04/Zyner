@@ -1,20 +1,21 @@
 /* 
  * Japolic Landing Page Styles
  * Built by Sakeeb for the Zyner Internship Assessment
- * Clean, modern, responsive CSS without frameworks
+ * Cool Palette: Deep Midnight Indigo, Slate & Electric Cyan Accents
  */
 
-/* 1. Global Reset & Variables */
+/* 1. Global Reset & Cool Color Tokens */
 :root {
-  --bg: #0b0d11;
-  --surface: #12161f;
-  --surface-hover: #181e2b;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-light: rgba(255, 255, 255, 0.15);
+  --bg: #080c14;
+  --surface: #0f172a;
+  --surface-hover: #1e293b;
+  --border: rgba(56, 189, 248, 0.12);
+  --border-light: rgba(56, 189, 248, 0.22);
   
-  --accent: #f59e0b;
-  --accent-hover: #d97706;
-  --accent-subtle: rgba(245, 158, 11, 0.12);
+  --accent: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --accent-subtle: rgba(56, 189, 248, 0.12);
+  --accent-glow: rgba(56, 189, 248, 0.3);
   
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
@@ -44,6 +45,8 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+  background-color: var(--bg);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -86,7 +89,7 @@ img {
   font-weight: 600;
   color: var(--accent);
   background-color: var(--accent-subtle);
-  border: 1px solid rgba(245, 158, 11, 0.25);
+  border: 1px solid rgba(56, 189, 248, 0.28);
   border-radius: 4px;
   margin-bottom: 16px;
   letter-spacing: 0.05em;
@@ -109,6 +112,7 @@ img {
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 12px;
+  color: var(--text-main);
 }
 
 .section-desc {
@@ -132,13 +136,14 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--accent);
-  color: #0b0d11;
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  color: #080c14;
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-hover);
+  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%);
   transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(56, 189, 248, 0.35);
 }
 
 .btn-secondary {
@@ -149,7 +154,8 @@ img {
 
 .btn-secondary:hover {
   background-color: var(--surface-hover);
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #ffffff;
 }
 
 .btn-large {
@@ -171,7 +177,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(11, 13, 17, 0.92);
+  background-color: rgba(8, 12, 20, 0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   height: 72px;
@@ -196,7 +202,7 @@ img {
   width: 32px;
   height: 32px;
   background-color: var(--surface);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -218,7 +224,7 @@ img {
 }
 
 .nav-link:hover {
-  color: var(--text-main);
+  color: var(--accent);
 }
 
 .header-cta {
@@ -314,6 +320,9 @@ img {
 
 .highlight {
   color: var(--accent);
+  background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 50%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -333,7 +342,7 @@ img {
 
 /* Quick command box */
 .terminal-card {
-  background-color: #07080b;
+  background-color: #06090f;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 14px 18px;
@@ -356,22 +365,24 @@ img {
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 2px 8px;
-  color: var(--text-muted);
+  color: var(--accent);
   cursor: pointer;
   font-size: 0.75rem;
   font-family: var(--font-code);
+  transition: all 0.2s ease;
 }
 
 .copy-btn:hover {
-  color: var(--text-main);
-  border-color: var(--border-light);
+  color: #ffffff;
+  border-color: var(--accent);
+  background-color: rgba(56, 189, 248, 0.2);
 }
 
 .terminal-code {
   display: block;
   font-family: var(--font-code);
   font-size: 0.85rem;
-  color: #e2e8f0;
+  color: #e0f2fe;
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -387,7 +398,7 @@ img {
   border: 1px solid var(--border-light);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
 .hero-img {
@@ -412,7 +423,7 @@ img {
 
 .image-caption span {
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--accent);
 }
 
 /* 6. Brand Intro & About */
@@ -584,7 +595,7 @@ img {
 
 .simple-table th.table-brand,
 .simple-table td.table-brand {
-  background-color: rgba(245, 158, 11, 0.04);
+  background-color: rgba(56, 189, 248, 0.06);
   color: var(--accent);
 }
 
@@ -675,7 +686,7 @@ img {
   height: 36px;
   border-radius: 50%;
   background-color: var(--accent-subtle);
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -698,7 +709,7 @@ img {
 }
 
 .step-pre {
-  background-color: #07080b;
+  background-color: #06090f;
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 8px 10px;
@@ -776,18 +787,19 @@ img {
 
 .input {
   width: 100%;
-  background-color: #07080b;
+  background-color: #06090f;
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 10px 14px;
   color: var(--text-main);
   font-family: var(--font-main);
   font-size: 0.95rem;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .input:focus {
   border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
   outline: none;
 }
 
@@ -828,9 +840,9 @@ img {
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background-color: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #10b981;
+  background-color: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: var(--accent);
   font-size: 1.6rem;
   display: flex;
   align-items: center;
@@ -851,8 +863,8 @@ img {
   font-family: var(--font-code);
   font-size: 0.8rem;
   color: var(--accent);
-  background: #07080b;
-  border: 1px solid var(--border);
+  background: #06090f;
+  border: 1px solid rgba(56, 189, 248, 0.25);
   padding: 4px 12px;
   border-radius: 4px;
 }

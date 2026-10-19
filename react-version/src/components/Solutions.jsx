@@ -1,86 +1,72 @@
 import React from 'react';
 
-/**
- * Solutions Component (Beginner Friendly)
- * 4 core solution cards with feature lists.
- */
 export default function Solutions() {
-  const solutionsData = [
+  const list = [
     {
-      badge: "Core Engine",
-      title: "Distributed High-Speed File System",
-      desc: "A purpose-built distributed storage architecture connecting multiple servers to a shared file hierarchy. Provides direct POSIX access with zero proprietary SDK lock-in.",
-      features: [
-        "POSIX file path compatibility (/mnt/shared-storage)",
-        "Concurrent read throughput across all connected servers",
-        "Transparent distributed metadata synchronization"
+      tag: "Core Product",
+      title: "Distributed Shared File System",
+      desc: "A high-performance file system that spans across all your servers. Gives you standard Linux file paths like /mnt/ai-data so existing code works without any changes.",
+      bullets: [
+        "Standard POSIX file system support",
+        "Fast concurrent reads across all servers",
+        "Zero code rewrites or proprietary SDKs"
       ]
     },
     {
-      badge: "Cloud Integration",
-      title: "Automated S3 Object Tiering",
-      desc: "Transparently bridges high-speed server cache with standard Amazon S3 buckets. Teams store massive datasets in affordable object storage while Japolic orchestrates fast access.",
-      features: [
-        "Direct bucket binding without manual data copy scripts",
-        "Automated background tiering for cold & historical data",
-        "Significant reduction in dedicated all-flash SAN hardware costs"
+      tag: "Storage Tiering",
+      title: "Intelligent S3 Cloud Tiering",
+      desc: "Automatically moves cold data to affordable S3 buckets while keeping active training batches ready on high-speed local storage.",
+      bullets: [
+        "Direct integration with existing S3 buckets",
+        "Huge savings on dedicated all-flash storage hardware",
+        "Background caching without interrupting running jobs"
       ]
     },
     {
-      badge: "Workload Acceleration",
-      title: "AI & Data-Intensive Pipeline Caching",
-      desc: "Designed to saturate PyTorch and TensorFlow data loaders by serving frequently accessed training batches directly from high-speed distributed memory and local flash tiers.",
-      features: [
-        "Drastic reduction in GPU idle time during data loading",
-        "Fast checkpointing to shared storage across multi-node runs",
-        "Optimized for millions of small files, shards, and vector embeddings"
+      tag: "AI Acceleration",
+      title: "Fast DataLoaders & Caching",
+      desc: "Saturate PyTorch and TensorFlow data loaders by streaming training batches directly from high-speed memory and local flash tiers.",
+      bullets: [
+        "Eliminates GPU idle wait times",
+        "Handles millions of small files and images smoothly",
+        "Fast checkpointing and quick recovery on multi-node runs"
       ]
     },
     {
-      badge: "Orchestration",
-      title: "Cluster & Kubernetes Integration",
-      desc: "Deployable across bare-metal server clusters, on-premises datacenters, or cloud environments using standard Linux kernel mounts or Kubernetes CSI drivers.",
-      features: [
-        "ReadWriteMany persistent volumes across multi-GPU pods",
-        "Compatible with Slurm, Kubernetes, and Ray cluster frameworks",
-        "Zero infrastructure redesign required to get started"
+      tag: "Easy Deployment",
+      title: "Cluster & Kubernetes Ready",
+      desc: "Works on bare-metal servers, on-premises datacenters, or cloud environments using standard mounts or Kubernetes CSI drivers.",
+      bullets: [
+        "Simple 1-line installation script",
+        "Works with Kubernetes, Slurm, and Docker",
+        "No expensive proprietary hardware appliances needed"
       ]
     }
   ];
 
   return (
-    <section className="section section-divider" id="solutions" aria-labelledby="solutionsTitle">
+    <section className="section solutions-section" id="solutions">
       <div className="container">
-        <div className="section-header text-center">
-          <div className="eyebrow">
-            <span className="eyebrow-dot" aria-hidden="true"></span>
-            Product Architecture
-          </div>
-          <h2 className="section-title" id="solutionsTitle">High-Performance File System Solutions</h2>
-          <p className="section-subtitle">
-            Engineered to remove storage bottlenecks across AI training clusters, large data lakes, and distributed engineering workflows.
+        <div className="section-intro text-center">
+          <span className="badge">Solutions</span>
+          <h2>Everything you need for fast, shared data</h2>
+          <p className="section-desc">
+            Designed to solve the real storage headaches engineering teams face every day.
           </p>
         </div>
 
         <div className="solutions-grid">
-          {solutionsData.map((item, index) => (
-            <article className="solution-card" key={index}>
-              <div>
-                <div className="solution-badge">{item.badge}</div>
-                <h3 className="solution-title">{item.title}</h3>
-                <p className="solution-desc">{item.desc}</p>
-              </div>
-              <ul className="solution-feature-list">
-                {item.features.map((feat, fIdx) => (
-                  <li className="solution-feature-item" key={fIdx}>
-                    <svg className="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>{feat}</span>
-                  </li>
+          {list.map((item, index) => (
+            <div className="solution-card" key={index}>
+              <div className="solution-tag">{item.tag}</div>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+              <ul className="feature-bullets">
+                {item.bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
                 ))}
               </ul>
-            </article>
+            </div>
           ))}
         </div>
       </div>

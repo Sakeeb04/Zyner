@@ -3,57 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japolic — High-Performance Distributed File System for AI</title>
-  <meta name="description" content="Japolic enables developers to connect multiple servers to shared storage at local disk speeds, integrated with S3 for cost-effective AI and data-intensive workloads.">
+  <title>Japolic — High-Performance File System for AI</title>
+  <meta name="description" content="Japolic connects multiple servers to shared storage at local disk speeds, integrated with S3 for AI and data-intensive workloads.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans for clean typography, JetBrains Mono for code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- =========================================================================
-       SECTION 1: Header & Navigation
-       ========================================================================= -->
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a href="#hero" class="brand-logo" aria-label="Japolic Home">
-        <span class="logo-symbol">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- Navigation Bar -->
+  <header class="header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="logo">
+        <span class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
             <polyline points="2 17 12 22 22 17"></polyline>
             <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
         </span>
-        <span>JAPOLIC</span>
-        <span class="brand-badge">Distributed FS</span>
+        <span class="logo-text">Japolic</span>
       </a>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="desktop-nav" aria-label="Primary Navigation">
-        <a href="#about" class="nav-link" id="navLinkAbout">About</a>
-        <a href="#solutions" class="nav-link" id="navLinkSolutions">Solutions</a>
-        <a href="#benefits" class="nav-link" id="navLinkBenefits">Benefits</a>
-        <a href="#use-cases" class="nav-link" id="navLinkUseCases">Use Cases</a>
-        <a href="#how-it-works" class="nav-link" id="navLinkHowItWorks">How It Works</a>
+      <!-- Desktop Links -->
+      <nav class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#solutions" class="nav-link">Solutions</a>
+        <a href="#benefits" class="nav-link">Why Japolic</a>
+        <a href="#use-cases" class="nav-link">Use Cases</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
       </nav>
 
-      <!-- Desktop Header Actions -->
-      <div class="header-actions">
-        <button type="button" class="btn btn-ghost btn-sm" id="openAssessmentBtn" aria-haspopup="dialog" aria-expanded="false">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-          Assessment Brief
-        </button>
-        <a href="#inquiry" class="btn btn-primary btn-sm" id="headerCtaBtn">Request Access</a>
-        
-        <!-- Mobile Menu Toggle -->
-        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+      <!-- Action Buttons -->
+      <div class="header-cta">
+        <a href="#inquiry" class="btn btn-primary">Request Access</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
           <span></span>
           <span></span>
           <span></span>
@@ -62,99 +50,57 @@
     </div>
   </header>
 
-  <!-- Mobile Slide-out Drawer Navigation -->
-  <div class="mobile-nav-drawer" id="mobileNavDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
-    <div class="mobile-nav-list">
-      <a href="#about" class="mobile-nav-link" id="mobLinkAbout">About</a>
-      <a href="#solutions" class="mobile-nav-link" id="mobLinkSolutions">Solutions</a>
-      <a href="#benefits" class="mobile-nav-link" id="mobLinkBenefits">Benefits</a>
-      <a href="#use-cases" class="mobile-nav-link" id="mobLinkUseCases">Use Cases</a>
-      <a href="#how-it-works" class="mobile-nav-link" id="mobLinkHowItWorks">How It Works</a>
-      <a href="#inquiry" class="mobile-nav-link" id="mobLinkInquiry">Contact Engineering</a>
-    </div>
-    <div class="mobile-nav-actions">
-      <button type="button" class="btn btn-secondary btn-sm" id="mobAssessmentBtn">View Assessment Brief</button>
-      <a href="#inquiry" class="btn btn-primary" id="mobCtaBtn">Request Access</a>
-    </div>
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#solutions" class="mobile-link">Solutions</a>
+    <a href="#benefits" class="mobile-link">Why Japolic</a>
+    <a href="#use-cases" class="mobile-link">Use Cases</a>
+    <a href="#how-it-works" class="mobile-link">How It Works</a>
+    <a href="#inquiry" class="btn btn-primary mobile-btn">Request Access</a>
   </div>
 
-  <main id="mainContent">
+  <main>
 
-    <!-- =========================================================================
-         SECTION 2: Hero Section
-         ========================================================================= -->
-    <section class="section hero-section" id="hero" aria-labelledby="heroTitle">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            Developer Infrastructure for AI
-          </div>
-          <h1 class="hero-headline" id="heroTitle">
-            Shared storage with <span class="text-accent">local disk performance.</span> Built for AI scale.
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-text">
+          <span class="badge">Developer Infrastructure</span>
+          <h1 class="hero-title">
+            Shared storage as fast as <span class="highlight">local disks.</span>
           </h1>
-          <p class="hero-description">
-            Japolic connects multiple servers to shared storage at speeds closer to local disks. Seamlessly federated with Amazon S3 so engineering teams keep hot data fast while leveraging low-cost storage for massive datasets.
+          <p class="hero-subtitle">
+            Japolic connects multiple servers to shared storage at local disk speeds. Works seamlessly with S3, so your team can use lower-cost storage for large amounts of data while keeping active files fast and accessible.
           </p>
 
-          <div class="hero-cta-group">
-            <a href="#inquiry" class="btn btn-primary btn-lg" id="heroPrimaryCta">
-              Request Technical Access
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-            <a href="#how-it-works" class="btn btn-secondary btn-lg" id="heroSecondaryCta">Explore Architecture</a>
+          <div class="hero-actions">
+            <a href="#inquiry" class="btn btn-primary btn-large">Get Started</a>
+            <a href="#how-it-works" class="btn btn-secondary btn-large">See How It Works</a>
           </div>
 
-          <!-- Quickstart Terminal Box -->
-          <div class="quickstart-box" aria-label="1-line quickstart command">
-            <div class="quickstart-header">
-              <span>Quickstart Mount Command</span>
-              <span>POSIX / Linux</span>
+          <!-- Quick terminal install command -->
+          <div class="terminal-card">
+            <div class="terminal-bar">
+              <span class="terminal-label">Quick Mount Command</span>
+              <button type="button" class="copy-btn" id="copyBtn">Copy</button>
             </div>
-            <div class="quickstart-code-wrapper">
-              <code class="quickstart-code" id="heroCommandText">
-                <span class="cmd-prompt">$</span> curl -fsSL https://get.japolic.io | bash &amp;&amp; japolic mount /mnt/ai-data --tier s3://dataset-bucket
-              </code>
-              <button type="button" class="copy-btn" id="copyCmdBtn" aria-label="Copy terminal mount command">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                <span id="copyCmdLabel">Copy</span>
-              </button>
-            </div>
+            <code class="terminal-code" id="cmdText">curl -fsSL https://get.japolic.io | bash &amp;&amp; japolic mount /mnt/ai-data --tier s3://my-dataset</code>
           </div>
         </div>
 
-        <!-- Hero Photographic Media Column -->
-        <div class="hero-media-wrapper">
-          <div class="hero-visual-card">
-            <div class="hero-image-container">
-              <img 
-                src="assets/japolic_hero_servers.jpg" 
-                alt="High-density enterprise server racks with illuminated optical fiber cabling and precision hardware chassis in a modern AI datacenter" 
-                class="hero-image"
-                id="heroMainImage"
-                loading="eager"
-                width="1280"
-                height="800"
-              >
-            </div>
-            <div class="hero-telemetry-overlay" aria-label="System Specifications Summary">
-              <div class="telemetry-item">
-                <span class="telemetry-label">Architecture</span>
-                <span class="telemetry-val">Distributed POSIX</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Read Latency</span>
-                <span class="telemetry-val accent">Local Disk Speed</span>
-              </div>
-              <div class="telemetry-item">
-                <span class="telemetry-label">Object Tier</span>
-                <span class="telemetry-val">Native S3 Sync</span>
+        <!-- Hero Server Image -->
+        <div class="hero-image-wrapper">
+          <div class="image-frame">
+            <img 
+              src="assets/japolic_hero_servers.jpg" 
+              alt="Enterprise server racks in a modern AI datacenter" 
+              class="hero-img"
+            >
+            <div class="image-caption">
+              <div>
+                <strong>Shared Storage Cluster</strong>
+                <span>Near-local disk latency for multi-node training</span>
               </div>
             </div>
           </div>
@@ -162,290 +108,185 @@
       </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 3: Brand Introduction
-         ========================================================================= -->
-    <section class="section section-divider" id="about" aria-labelledby="aboutTitle">
+    <!-- 2. Brand Introduction -->
+    <section class="section about-section" id="about">
       <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            The Client Purpose
-          </div>
-          <h2 class="section-title" id="aboutTitle">Rethinking Shared Storage for Modern AI Workloads</h2>
-          <p class="section-subtitle">
-            Traditional network storage creates costly I/O bottlenecks when scaling compute nodes. Japolic bridges the gap between local disk velocity and cloud object durability.
+        <div class="section-intro">
+          <span class="badge">What is Japolic?</span>
+          <h2>Built for AI applications and heavy workloads</h2>
+          <p class="section-desc">
+            Modern AI models require feeding massive amounts of data into multiple servers simultaneously. Traditional network filesystems create slow bottlenecks, while local disks on each server are expensive and hard to manage.
           </p>
         </div>
 
-        <div class="intro-grid">
-          <div class="intro-left">
-            <p class="intro-lead">
-              Japolic is a developer infrastructure company building a new type of high-performance file system designed from the ground up for AI applications and data-intensive computing.
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-number">01</div>
+            <h3>Connect Multiple Servers</h3>
+            <p>
+              Attach dozens of compute nodes to a single shared storage pool without dealing with manual synchronization scripts or duplicated files.
             </p>
-            <div class="intro-body-text">
-              <p>
-                In high-density training clusters and distributed pipelines, GPU compute nodes spend significant time idle waiting for data loaders to read batches from conventional network filesystems. Moving large datasets locally is slow and consumes costly local disk space.
-              </p>
-              <p>
-                Japolic resolves this trade-off by allowing developers to connect multiple servers directly to a unified shared storage namespace. Frequently accessed data delivers throughput closer to local NVMe disks, while cold datasets remain securely and cost-effectively stored in Amazon S3.
-              </p>
-            </div>
-            <div class="status-pill">
-              <span class="status-dot" aria-hidden="true"></span>
-              Built specifically for Developers, AI Teams, and Infrastructure Leaders
-            </div>
           </div>
 
-          <div class="intro-card-stack">
-            <article class="pillar-card">
-              <span class="pillar-num">01 / SHARED INFRASTRUCTURE</span>
-              <h3 class="pillar-title">Multi-Server Shared Storage</h3>
-              <p class="pillar-desc">
-                Connect dozens of training nodes or worker servers to a shared file system without complex volume management or manual synchronization scripts.
-              </p>
-            </article>
+          <div class="about-card">
+            <div class="about-number">02</div>
+            <h3>Local Disk Performance</h3>
+            <p>
+              Access frequently used files at speeds closer to local NVMe drives. Keep GPUs and CPUs constantly busy instead of waiting for data to load.
+            </p>
+          </div>
 
-            <article class="pillar-card">
-              <span class="pillar-num">02 / LOCAL READ LATENCY</span>
-              <h3 class="pillar-title">Near-Local Disk Speeds</h3>
-              <p class="pillar-desc">
-                Intelligent caching and parallel data streaming ensure read access speeds that prevent GPU starvation during demanding training epochs.
-              </p>
-            </article>
-
-            <article class="pillar-card">
-              <span class="pillar-num">03 / COST EFFICIENCY</span>
-              <h3 class="pillar-title">Seamless S3 Federation</h3>
-              <p class="pillar-desc">
-                Retain petabytes of data in low-cost S3 object storage without sacrificing the accessibility required by active production workloads.
-              </p>
-            </article>
+          <div class="about-card">
+            <div class="about-number">03</div>
+            <h3>Seamless S3 Integration</h3>
+            <p>
+              Keep your large datasets and archives in low-cost Amazon S3 storage. Japolic caches active files locally so you get the best of both worlds.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 4: Main Solutions & Capabilities
-         ========================================================================= -->
-    <section class="section section-divider" id="solutions" aria-labelledby="solutionsTitle">
+    <!-- 3. Main Products & Solutions -->
+    <section class="section solutions-section" id="solutions">
       <div class="container">
-        <div class="section-header text-center">
-          <div class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            Product Architecture
-          </div>
-          <h2 class="section-title" id="solutionsTitle">High-Performance File System Solutions</h2>
-          <p class="section-subtitle">
-            Engineered to remove storage bottlenecks across AI training clusters, large data lakes, and distributed engineering workflows.
+        <div class="section-intro text-center">
+          <span class="badge">Solutions</span>
+          <h2>Everything you need for fast, shared data</h2>
+          <p class="section-desc">
+            Designed to solve the real storage headaches engineering teams face every day.
           </p>
         </div>
 
         <div class="solutions-grid">
-          <article class="solution-card">
-            <div>
-              <div class="solution-badge">Core Engine</div>
-              <h3 class="solution-title">Distributed High-Speed File System</h3>
-              <p class="solution-desc">
-                A purpose-built distributed storage architecture that connects multiple servers to a shared file hierarchy. Provides direct POSIX access with zero proprietary SDK lock-in.
-              </p>
-            </div>
-            <ul class="solution-feature-list">
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>POSIX file path compatibility (/mnt/shared-storage)</span>
-              </li>
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Concurrent read throughput across all connected servers</span>
-              </li>
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Transparent distributed metadata synchronization</span>
-              </li>
+          <div class="solution-card">
+            <div class="solution-tag">Core Product</div>
+            <h3>Distributed Shared File System</h3>
+            <p>
+              A high-performance file system that spans across all your servers. Gives you standard Linux file paths like <code>/mnt/ai-data</code> so existing code works without any changes.
+            </p>
+            <ul class="feature-bullets">
+              <li>Standard POSIX file system support</li>
+              <li>Fast concurrent reads across all servers</li>
+              <li>Zero code rewrites or proprietary SDKs</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="solution-card">
-            <div>
-              <div class="solution-badge">Cloud Integration</div>
-              <h3 class="solution-title">Automated S3 Object Tiering</h3>
-              <p class="solution-desc">
-                Transparently bridges high-speed server cache with standard Amazon S3 buckets. Teams store massive datasets in affordable object storage while Japolic orchestrates fast access.
-              </p>
-            </div>
-            <ul class="solution-feature-list">
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Direct bucket binding without manual data copy scripts</span>
-              </li>
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Automated background tiering for cold &amp; historical data</span>
-              </li>
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Significant reduction in dedicated all-flash SAN hardware costs</span>
-              </li>
+          <div class="solution-card">
+            <div class="solution-tag">Storage Tiering</div>
+            <h3>Intelligent S3 Cloud Tiering</h3>
+            <p>
+              Automatically moves cold data to affordable S3 buckets while keeping active training batches ready on high-speed local storage.
+            </p>
+            <ul class="feature-bullets">
+              <li>Direct integration with existing S3 buckets</li>
+              <li>Huge savings on dedicated all-flash storage hardware</li>
+              <li>Background caching without interrupting running jobs</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="solution-card">
-            <div>
-              <div class="solution-badge">Workload Acceleration</div>
-              <h3 class="solution-title">AI &amp; Data-Intensive Pipeline Caching</h3>
-              <p class="solution-desc">
-                Designed to saturate PyTorch and TensorFlow data loaders by serving frequently accessed training batches directly from high-speed distributed memory and local flash tiers.
-              </p>
-            </div>
-            <ul class="solution-feature-list">
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Drastic reduction in GPU idle time during data loading</span>
-              </li>
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Fast checkpointing to shared storage across multi-node runs</span>
-              </li>
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Optimized for millions of small files, shards, and vector embeddings</span>
-              </li>
+          <div class="solution-card">
+            <div class="solution-tag">AI Acceleration</div>
+            <h3>Fast DataLoaders &amp; Caching</h3>
+            <p>
+              Saturate PyTorch and TensorFlow data loaders by streaming training batches directly from high-speed memory and local flash tiers.
+            </p>
+            <ul class="feature-bullets">
+              <li>Eliminates GPU idle wait times</li>
+              <li>Handles millions of small files and images smoothly</li>
+              <li>Fast checkpointing and quick recovery on multi-node runs</li>
             </ul>
-          </article>
+          </div>
 
-          <article class="solution-card">
-            <div>
-              <div class="solution-badge">Orchestration</div>
-              <h3 class="solution-title">Cluster &amp; Kubernetes Integration</h3>
-              <p class="solution-desc">
-                Deployable across bare-metal server clusters, on-premises datacenters, or cloud environments using standard Linux kernel mounts or Kubernetes CSI drivers.
-              </p>
-            </div>
-            <ul class="solution-feature-list">
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>ReadWriteMany persistent volumes across multi-GPU pods</span>
-              </li>
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Compatible with Slurm, Kubernetes, and Ray cluster frameworks</span>
-              </li>
-              <li class="solution-feature-item">
-                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Zero infrastructure redesign required to get started</span>
-              </li>
+          <div class="solution-card">
+            <div class="solution-tag">Easy Deployment</div>
+            <h3>Cluster &amp; Kubernetes Ready</h3>
+            <p>
+              Works on bare-metal servers, on-premises datacenters, or cloud environments using standard mounts or Kubernetes CSI drivers.
+            </p>
+            <ul class="feature-bullets">
+              <li>Simple 1-line installation script</li>
+              <li>Works with Kubernetes, Slurm, and Docker</li>
+              <li>No expensive proprietary hardware appliances needed</li>
             </ul>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 5: Key Benefits & Comparison Matrix
-         ========================================================================= -->
-    <section class="section section-divider" id="benefits" aria-labelledby="benefitsTitle">
+    <!-- 4. Key Benefits & Comparison -->
+    <section class="section benefits-section" id="benefits">
       <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            Technical Advantage
-          </div>
-          <h2 class="section-title" id="benefitsTitle">Why Engineering Teams Choose Japolic</h2>
-          <p class="section-subtitle">
-            Combining the simplicity of a standard local disk with the scalability and economics of cloud object storage.
+        <div class="section-intro">
+          <span class="badge">Why Choose Japolic</span>
+          <h2>The speed of local disks with the scale of the cloud</h2>
+          <p class="section-desc">
+            Why developers discover and test Japolic first, and infrastructure leaders choose it for long-term savings.
           </p>
         </div>
 
         <div class="benefits-grid">
-          <article class="benefit-card">
-            <div class="benefit-icon-box" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            </div>
-            <h3 class="benefit-title">Local Disk Speeds</h3>
-            <p class="benefit-desc">
-              Servers access active files at speeds closer to local drives, preventing compute starvation during intensive read operations.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon-box" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            </div>
-            <h3 class="benefit-title">Substantial S3 Savings</h3>
-            <p class="benefit-desc">
-              Store petabytes in low-cost S3 while Japolic handles local caching, avoiding over-provisioned local hardware costs.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon-box" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <h3 class="benefit-title">Unified Shared Namespace</h3>
-            <p class="benefit-desc">
-              Every server sees the same directory tree. Eliminate tedious dataset synchronization scripts and duplicate files across nodes.
-            </p>
-          </article>
-
-          <article class="benefit-card">
-            <div class="benefit-icon-box" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"></path></svg>
-            </div>
-            <h3 class="benefit-title">Zero Pipeline Rewrites</h3>
-            <p class="benefit-desc">
-              Standard POSIX filesystem semantics allow existing training scripts, Python code, and containerized tools to work out of the box.
-            </p>
-          </article>
+          <div class="benefit-item">
+            <h4>Speeds Closer to Local Disks</h4>
+            <p>Your servers read shared datasets at high speeds, avoiding the lag of traditional network storage.</p>
+          </div>
+          <div class="benefit-item">
+            <h4>Lower Cloud Storage Costs</h4>
+            <p>Store petabytes cheaply in standard S3 while Japolic handles local caching automatically.</p>
+          </div>
+          <div class="benefit-item">
+            <h4>Single Shared Directory</h4>
+            <p>Every server sees the exact same folder structure. No manual copying or syncing required.</p>
+          </div>
+          <div class="benefit-item">
+            <h4>Zero Code Rewrites</h4>
+            <p>Mount it as a standard folder. Python scripts, PyTorch, and bash commands run out of the box.</p>
+          </div>
         </div>
 
-        <!-- Architectural Comparison Matrix -->
-        <div class="comparison-wrapper">
-          <div class="table-header-block">
-            <h3 class="table-title">Architectural Approach Comparison</h3>
-            <span class="status-pill">Evaluated for Data-Intensive Workloads</span>
-          </div>
-          <div class="table-responsive">
-            <table class="comparison-table">
+        <!-- Simple Comparison Table -->
+        <div class="comparison-card">
+          <h3 class="comparison-heading">How Japolic Compares</h3>
+          <div class="table-wrap">
+            <table class="simple-table">
               <thead>
                 <tr>
-                  <th scope="col">Capability / Architecture</th>
-                  <th scope="col" class="col-japolic">Japolic File System</th>
-                  <th scope="col">Traditional Network Storage</th>
-                  <th scope="col">Direct S3 Access Only</th>
+                  <th>Feature</th>
+                  <th class="table-brand">Japolic</th>
+                  <th>Traditional Network Storage</th>
+                  <th>Direct S3 Access Only</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="col-feature">Shared Multi-Server Access</td>
-                  <td class="col-japolic"><span class="badge-pos">Native Shared Mount</span></td>
-                  <td><span class="badge-pos">Supported</span></td>
-                  <td><span class="badge-neutral">Requires Custom Code</span></td>
+                  <td>Shared Multi-Server Access</td>
+                  <td class="table-brand"><strong>Yes, native mount</strong></td>
+                  <td>Yes</td>
+                  <td>Requires custom code</td>
                 </tr>
                 <tr>
-                  <td class="col-feature">Read Performance for Active Data</td>
-                  <td class="col-japolic"><span class="badge-pos">Speeds closer to local disks</span></td>
-                  <td><span class="badge-neg">Network &amp; Controller Bottleneck</span></td>
-                  <td><span class="badge-neg">High API Latency</span></td>
+                  <td>Active Read Speed</td>
+                  <td class="table-brand"><strong>Closer to local disks</strong></td>
+                  <td>Network bottleneck</td>
+                  <td>Slow API requests</td>
                 </tr>
                 <tr>
-                  <td class="col-feature">Cost for Large Data Retention</td>
-                  <td class="col-japolic"><span class="badge-pos">Low S3 Object Storage Cost</span></td>
-                  <td><span class="badge-neg">Expensive Dedicated Hardware</span></td>
-                  <td><span class="badge-pos">Low S3 Cost</span></td>
+                  <td>Cost for Large Datasets</td>
+                  <td class="table-brand"><strong>Low (uses cheap S3)</strong></td>
+                  <td>Very expensive hardware</td>
+                  <td>Low (uses cheap S3)</td>
                 </tr>
                 <tr>
-                  <td class="col-feature">POSIX File System Compatibility</td>
-                  <td class="col-japolic"><span class="badge-pos">Full POSIX Directory Path</span></td>
-                  <td><span class="badge-pos">Full POSIX</span></td>
-                  <td><span class="badge-neg">Non-POSIX Object Keys</span></td>
+                  <td>Standard File Path (/mnt)</td>
+                  <td class="table-brand"><strong>Yes, standard POSIX</strong></td>
+                  <td>Yes</td>
+                  <td>No (uses object keys)</td>
                 </tr>
                 <tr>
-                  <td class="col-feature">Developer Setup Friction</td>
-                  <td class="col-japolic"><span class="badge-pos">Single Mount Command</span></td>
-                  <td><span class="badge-neutral">Complex Export Setup</span></td>
-                  <td><span class="badge-neg">Application Code Rewrites</span></td>
+                  <td>Developer Setup</td>
+                  <td class="table-brand"><strong>1-line command</strong></td>
+                  <td>Complex network setup</td>
+                  <td>Rewrite app with SDKs</td>
                 </tr>
               </tbody>
             </table>
@@ -454,275 +295,183 @@
       </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 6: Featured Use Cases
-         ========================================================================= -->
-    <section class="section section-divider" id="use-cases" aria-labelledby="useCasesTitle">
+    <!-- 5. Featured Use Cases -->
+    <section class="section usecases-section" id="use-cases">
       <div class="container">
-        <div class="section-header">
-          <div class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            Real-World Application
+        <div class="section-intro">
+          <span class="badge">Real Use Cases</span>
+          <h2>Where Japolic makes the biggest difference</h2>
+        </div>
+
+        <div class="usecases-grid">
+          <div class="usecase-card">
+            <span class="usecase-pill">Use Case 01</span>
+            <h3>Distributed AI Model Training</h3>
+            <p>
+              When training models across multiple GPU servers, data loaders must read millions of samples continuously. Japolic keeps data readily cached so GPUs never sit idle.
+            </p>
           </div>
-          <h2 class="section-title" id="useCasesTitle">Engineered for High-Demand Workloads</h2>
-          <p class="section-subtitle">
-            How data engineering and AI teams leverage Japolic across critical infrastructure workflows.
-          </p>
+
+          <div class="usecase-card">
+            <span class="usecase-pill">Use Case 02</span>
+            <h3>Model Checkpointing &amp; Resume</h3>
+            <p>
+              Writing huge checkpoint files from multiple nodes at once often freezes training. Japolic absorbs checkpoints quickly and syncs them to S3 in the background.
+            </p>
+          </div>
+
+          <div class="usecase-card">
+            <span class="usecase-pill">Use Case 03</span>
+            <h3>Data-Intensive Analytics</h3>
+            <p>
+              Large ETL jobs and batch pipelines can read from a shared directory simultaneously without experiencing network storage slowdowns.
+            </p>
+          </div>
         </div>
 
-        <div class="use-cases-grid">
-          <article class="use-case-card">
-            <div>
-              <span class="use-case-tag">Use Case 01</span>
-              <h3 class="use-case-title">Distributed AI Model Training</h3>
-              <p class="use-case-desc">
-                Deep learning workloads require feeding massive datasets into multi-GPU clusters continuously. Japolic enables all worker servers to read training samples at local disk speeds, eliminating DataLoader stalls.
-              </p>
-            </div>
-            <div class="use-case-meta">
-              <span>Frameworks: PyTorch, Ray</span>
-              <span>Benefit: High GPU Utilization</span>
-            </div>
-          </article>
-
-          <article class="use-case-card">
-            <div>
-              <span class="use-case-tag">Use Case 02</span>
-              <h3 class="use-case-title">Model Checkpointing &amp; Recovery</h3>
-              <p class="use-case-desc">
-                Writing multi-gigabyte or terabyte model checkpoints simultaneously from distributed nodes can freeze training pipelines. Japolic ingests checkpoints at high local speeds and streams them back to S3.
-              </p>
-            </div>
-            <div class="use-case-meta">
-              <span>Workload: Checkpoint Dumps</span>
-              <span>Benefit: Zero Pipeline Freeze</span>
-            </div>
-          </article>
-
-          <article class="use-case-card">
-            <div>
-              <span class="use-case-tag">Use Case 03</span>
-              <h3 class="use-case-title">Data-Intensive Analytics</h3>
-              <p class="use-case-desc">
-                ETL and high-throughput data processing jobs reading from shared repositories often saturate network disks. Japolic's distributed file system ensures concurrent reads remain fast across all servers.
-              </p>
-            </div>
-            <div class="use-case-meta">
-              <span>Workload: Parallel Batch ETL</span>
-              <span>Benefit: Consistent Throughput</span>
-            </div>
-          </article>
-        </div>
-
-        <!-- Visual Architecture Feature Callout -->
-        <div class="arch-spotlight">
+        <!-- Architecture Spotlight Banner -->
+        <div class="spotlight-card">
           <img 
             src="assets/japolic_storage_arch.jpg" 
-            alt="3D isometric technical rendering of Japolic distributed file system connecting multiple compute servers to parallel flash storage tiers and cloud S3 buckets" 
-            class="arch-spotlight-img"
-            loading="lazy"
-            width="800"
-            height="500"
+            alt="Japolic 3D storage architecture visual" 
+            class="spotlight-img"
           >
-          <div class="arch-spotlight-content">
-            <div class="eyebrow">
-              <span class="eyebrow-dot" aria-hidden="true"></span>
-              Distributed Architecture
-            </div>
-            <h3 class="section-title" style="font-size: 1.75rem;">Connecting Servers Directly to Fast Shared Storage</h3>
-            <p class="section-subtitle">
-              By combining local server NVMe flash tiers into a coordinated distributed cache and transparently linking to Amazon S3, Japolic delivers the speed of direct-attached storage with the convenience and cost profile of the cloud.
+          <div class="spotlight-content">
+            <h3>How the storage layers work together</h3>
+            <p>
+              Servers connect to a fast local caching layer for instant read access. In the background, Japolic syncs with your S3 buckets so all your data remains safely stored at low cost.
             </p>
-            <div style="margin-top: var(--space-md);">
-              <a href="#inquiry" class="btn btn-secondary btn-sm">Talk to Our Engineering Team</a>
-            </div>
+            <a href="#inquiry" class="btn btn-secondary">Contact Our Team</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 7: How It Works (Process Pipeline)
-         ========================================================================= -->
-    <section class="section section-divider" id="how-it-works" aria-labelledby="howItWorksTitle">
+    <!-- 6. How It Works -->
+    <section class="section how-section" id="how-it-works">
       <div class="container">
-        <div class="section-header text-center">
-          <div class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            Deployment Flow
-          </div>
-          <h2 class="section-title" id="howItWorksTitle">How Japolic Works</h2>
-          <p class="section-subtitle">
-            Four simple steps to connect your compute clusters to high-speed shared storage backed by low-cost S3.
-          </p>
+        <div class="section-intro text-center">
+          <span class="badge">Step-by-Step</span>
+          <h2>How to get started with Japolic</h2>
+          <p class="section-desc">Up and running on your servers in four straightforward steps.</p>
         </div>
 
-        <div class="process-timeline">
-          <div class="step-card">
-            <div class="step-marker" aria-hidden="true">01</div>
-            <h3 class="step-title">Install the Client</h3>
-            <p class="step-desc">
-              Deploy the lightweight Japolic client daemon onto your physical servers, cloud instances, or Kubernetes worker nodes.
-            </p>
-            <div class="step-code-snippet">
-              curl -fsSL https://get.japolic.io | bash
-            </div>
+        <div class="steps-row">
+          <div class="step-box">
+            <div class="step-num">1</div>
+            <h4>Install the Client</h4>
+            <p>Run our lightweight installation script on each server or worker node.</p>
+            <pre class="step-pre"><code>curl -fsSL https://get.japolic.io | bash</code></pre>
           </div>
 
-          <div class="step-card">
-            <div class="step-marker" aria-hidden="true">02</div>
-            <h3 class="step-title">Mount Shared Namespace</h3>
-            <p class="step-desc">
-              Execute the mount command to bind the shared storage namespace to any local POSIX mount point on each server.
-            </p>
-            <div class="step-code-snippet">
-              japolic mount /mnt/shared-storage
-            </div>
+          <div class="step-box">
+            <div class="step-num">2</div>
+            <h4>Mount Shared Storage</h4>
+            <p>Mount the shared namespace to any folder on your server.</p>
+            <pre class="step-pre"><code>japolic mount /mnt/ai-data</code></pre>
           </div>
 
-          <div class="step-card">
-            <div class="step-marker" aria-hidden="true">03</div>
-            <h3 class="step-title">Connect S3 Storage</h3>
-            <p class="step-desc">
-              Link your existing Amazon S3 buckets. Japolic maps the directory hierarchy and manages active data caching automatically.
-            </p>
-            <div class="step-code-snippet">
-              --tier s3://ai-datasets-bucket
-            </div>
+          <div class="step-box">
+            <div class="step-num">3</div>
+            <h4>Link Your S3 Bucket</h4>
+            <p>Connect your existing S3 bucket so Japolic can handle tiering automatically.</p>
+            <pre class="step-pre"><code>--tier s3://my-dataset-bucket</code></pre>
           </div>
 
-          <div class="step-card">
-            <div class="step-marker" aria-hidden="true">04</div>
-            <h3 class="step-title">Train &amp; Scale at Speed</h3>
-            <p class="step-desc">
-              Your applications read and write directly at speeds closer to local disks. S3 stores large amounts of data at lower cost.
-            </p>
-            <div class="step-code-snippet">
-              japolic start-cluster --data /mnt/shared-storage
-            </div>
+          <div class="step-box">
+            <div class="step-num">4</div>
+            <h4>Run Your Workload</h4>
+            <p>Read and write data just like a normal local disk, but with S3 scale.</p>
+            <pre class="step-pre"><code>japolic run --data /mnt/ai-data</code></pre>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 8: Final CTA & Contact / Inquiry Form
-         ========================================================================= -->
-    <section class="section section-divider" id="inquiry" aria-labelledby="inquiryTitle">
+    <!-- 7. Contact / Inquiry Form -->
+    <section class="section contact-section" id="inquiry">
       <div class="container">
-        <div class="inquiry-grid">
-          <div class="inquiry-info">
-            <div class="eyebrow">
-              <span class="eyebrow-dot" aria-hidden="true"></span>
-              Get Started
-            </div>
-            <h2 class="inquiry-info-title" id="inquiryTitle">Ready to Accelerate Your Storage Infrastructure?</h2>
-            <p class="inquiry-info-text">
-              Whether you are an AI engineer evaluating shared storage performance or an infrastructure leader seeking to optimize S3 storage costs, our engineering team is here to help you get connected.
+        <div class="contact-grid">
+          <div class="contact-details">
+            <span class="badge">Contact Us</span>
+            <h2>Ready to try Japolic on your cluster?</h2>
+            <p class="section-desc">
+              Whether you are an engineer looking to test Japolic on your servers or an infrastructure lead wanting to optimize storage costs, we would love to help you get started.
             </p>
 
-            <div class="inquiry-points">
-              <div class="inquiry-point-item">
-                <svg class="inquiry-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <div>
-                  <div class="inquiry-point-title">Proof-of-Concept Cluster Access</div>
-                  <div class="inquiry-point-desc">Test Japolic on your existing GPU or CPU compute nodes with your real workloads.</div>
-                </div>
-              </div>
-
-              <div class="inquiry-point-item">
-                <svg class="inquiry-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <div>
-                  <div class="inquiry-point-title">Direct Engineering Support</div>
-                  <div class="inquiry-point-desc">Work directly with systems engineers specializing in distributed file systems and S3 integration.</div>
-                </div>
-              </div>
-
-              <div class="inquiry-point-item">
-                <svg class="inquiry-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <div>
-                  <div class="inquiry-point-title">Zero Upfront Hardware Commitments</div>
-                  <div class="inquiry-point-desc">Leverage your existing servers and S3 storage accounts without proprietary hardware appliances.</div>
-                </div>
-              </div>
-            </div>
+            <ul class="contact-highlights">
+              <li>
+                <strong>Free proof-of-concept setup:</strong> Test with your real workloads on your existing servers.
+              </li>
+              <li>
+                <strong>Direct engineer support:</strong> Work directly with our team to configure your S3 connection.
+              </li>
+              <li>
+                <strong>No hardware lock-in:</strong> Use your existing servers and cloud storage.
+              </li>
+            </ul>
           </div>
 
-          <!-- Interactive Contact Form -->
-          <div class="inquiry-form-card">
-            <form id="contactForm" novalidate aria-label="Japolic Technical Access Inquiry Form">
-              <div class="form-group-grid">
-                <div class="form-group">
-                  <label for="fullName" class="form-label">Full Name <span class="req" aria-hidden="true">*</span></label>
-                  <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. Alex Rivera" required aria-required="true" aria-describedby="fullNameError">
-                  <span class="form-error-msg" id="fullNameError">Please enter your full name.</span>
+          <!-- Human-friendly form -->
+          <div class="form-container">
+            <form id="inquiryForm" class="inquiry-form" novalidate>
+              <div class="form-row">
+                <div class="field-wrap">
+                  <label for="name">Your Name <span class="req">*</span></label>
+                  <input type="text" id="name" name="name" class="input" placeholder="e.g. Alex Rivera" required>
+                  <span class="error-msg" id="nameError">Please enter your name.</span>
                 </div>
 
-                <div class="form-group">
-                  <label for="workEmail" class="form-label">Work Email <span class="req" aria-hidden="true">*</span></label>
-                  <input type="email" id="workEmail" name="workEmail" class="form-input" placeholder="alex@company.com" required aria-required="true" aria-describedby="workEmailError">
-                  <span class="form-error-msg" id="workEmailError">Please enter a valid work email address.</span>
+                <div class="field-wrap">
+                  <label for="email">Work Email <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" class="input" placeholder="alex@company.com" required>
+                  <span class="error-msg" id="emailError">Please enter a valid email address.</span>
                 </div>
               </div>
 
-              <div class="form-group-grid">
-                <div class="form-group">
-                  <label for="userRole" class="form-label">Your Role <span class="req" aria-hidden="true">*</span></label>
-                  <select id="userRole" name="userRole" class="form-select" required aria-required="true" aria-describedby="userRoleError">
+              <div class="form-row">
+                <div class="field-wrap">
+                  <label for="role">Your Role <span class="req">*</span></label>
+                  <select id="role" name="role" class="input" required>
                     <option value="">Select your role</option>
                     <option value="developer">Developer / AI Engineer</option>
-                    <option value="engineering_lead">Engineering Team Lead</option>
-                    <option value="ai_team">AI / ML Infrastructure Team</option>
-                    <option value="infra_leader">Infrastructure Leader / CTO / FinOps</option>
+                    <option value="lead">Engineering Team Lead</option>
+                    <option value="infra">Infrastructure / DevOps / FinOps</option>
+                    <option value="other">Other</option>
                   </select>
-                  <span class="form-error-msg" id="userRoleError">Please select your role.</span>
+                  <span class="error-msg" id="roleError">Please select your role.</span>
                 </div>
 
-                <div class="form-group">
-                  <label for="workloadType" class="form-label">Primary Workload <span class="req" aria-hidden="true">*</span></label>
-                  <select id="workloadType" name="workloadType" class="form-select" required aria-required="true" aria-describedby="workloadTypeError">
-                    <option value="">Select workload type</option>
-                    <option value="ai_training">AI / Deep Learning Model Training</option>
-                    <option value="checkpointing">Large Model Checkpointing &amp; Resume</option>
-                    <option value="analytics">Data-Intensive Batch Analytics</option>
-                    <option value="s3_caching">S3 Cloud Storage Cost Optimization</option>
-                    <option value="other">Other High-Performance Storage Needs</option>
+                <div class="field-wrap">
+                  <label for="workload">Primary Workload <span class="req">*</span></label>
+                  <select id="workload" name="workload" class="input" required>
+                    <option value="">Select workload</option>
+                    <option value="training">AI / Deep Learning Training</option>
+                    <option value="checkpointing">Model Checkpointing</option>
+                    <option value="analytics">Data Analytics &amp; ETL</option>
+                    <option value="s3_optimization">S3 Storage Cost Optimization</option>
+                    <option value="other">Other</option>
                   </select>
-                  <span class="form-error-msg" id="workloadTypeError">Please select your primary workload.</span>
+                  <span class="error-msg" id="workloadError">Please select your primary workload.</span>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="clusterDetails" class="form-label">Current Cluster &amp; Storage Environment</label>
-                <input type="text" id="clusterDetails" name="clusterDetails" class="form-input" placeholder="e.g. 16 on-prem GPU servers + 250TB S3 bucket">
-                <span class="form-hint">Optional: approximate number of servers and cloud or on-prem environment.</span>
+              <div class="field-wrap">
+                <label for="message">Tell us about your project <span class="req">*</span></label>
+                <textarea id="message" name="message" class="input textarea" placeholder="What are your current storage bottlenecks or setup goals?" required></textarea>
+                <span class="error-msg" id="messageError">Please share a brief message (at least 10 characters).</span>
               </div>
 
-              <div class="form-group">
-                <label for="projectMessage" class="form-label">Project Details / Message <span class="req" aria-hidden="true">*</span></label>
-                <textarea id="projectMessage" name="projectMessage" class="form-textarea" placeholder="Tell us about your current storage bottlenecks or evaluation goals..." required aria-required="true" aria-describedby="messageError"></textarea>
-                <span class="form-error-msg" id="messageError">Please share a brief message about your project or evaluation.</span>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-lg" id="submitFormBtn" style="width: 100%; margin-top: var(--space-xs);">
-                Submit Request for Technical Access
-              </button>
+              <button type="submit" class="btn btn-primary btn-block">Send Request</button>
             </form>
 
-            <!-- Success State Message Card -->
-            <div class="form-success-card" id="formSuccessCard" role="alert" aria-live="polite">
-              <div class="success-icon-box">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-              </div>
-              <h3 class="success-title">Inquiry Successfully Received</h3>
-              <p class="success-desc">
-                Thank you for your interest in Japolic. Our developer infrastructure engineering team has received your details and will follow up with deployment instructions and technical access credentials.
-              </p>
-              <div class="success-ref-code" id="successRefCode">REF: JAP-2026-INQ-7821</div>
-              <button type="button" class="btn btn-secondary btn-sm" id="resetFormBtn" style="margin-top: var(--space-sm);">Submit Another Inquiry</button>
+            <!-- Success Card -->
+            <div class="success-card" id="successCard">
+              <div class="success-check">&#10003;</div>
+              <h3>Thank you for reaching out!</h3>
+              <p>We have received your message. Our engineering team will review your requirements and reach out within 24 hours.</p>
+              <div class="ref-badge" id="refBadge">REF: JAP-7842</div>
+              <button type="button" class="btn btn-secondary btn-small" id="resetBtn">Send Another Message</button>
             </div>
           </div>
         </div>
@@ -731,139 +480,57 @@
 
   </main>
 
-  <!-- =========================================================================
-       SECTION 9: Professional Footer
-       ========================================================================= -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top-grid">
-        <div class="footer-brand-col">
-          <div class="brand-logo">
-            <span class="logo-symbol">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
-            </span>
-            <span>JAPOLIC</span>
-          </div>
-          <p class="footer-desc">
-            Developer infrastructure company building a new type of high-performance distributed file system for AI applications and data-intensive workloads.
-          </p>
-          <div class="status-pill" style="width: fit-content;">
-            <span class="status-dot" aria-hidden="true"></span>
-            All Infrastructure Systems Normal
-          </div>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Architecture</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#about" class="footer-link">File System Design</a></li>
-            <li><a href="#solutions" class="footer-link">Distributed Mounts</a></li>
-            <li><a href="#solutions" class="footer-link">S3 Object Tiering</a></li>
-            <li><a href="#how-it-works" class="footer-link">POSIX Interface</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Target Audience</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#about" class="footer-link">Developers</a></li>
-            <li><a href="#about" class="footer-link">Engineering Teams</a></li>
-            <li><a href="#use-cases" class="footer-link">AI &amp; ML Teams</a></li>
-            <li><a href="#benefits" class="footer-link">Infrastructure Leaders</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer-col-title">Assessment &amp; Contact</h4>
-          <ul class="footer-nav-list">
-            <li><button type="button" class="footer-link" id="footerAssessmentBtn" style="padding: 0; text-align: left;">Internship Assessment Brief</button></li>
-            <li><a href="#inquiry" class="footer-link">Request Access</a></li>
-            <li><a href="mailto:engineering@japolic.example.com" class="footer-link">engineering@japolic.io</a></li>
-            <li><a href="#hero" class="footer-link">Back to Top &uarr;</a></li>
-          </ul>
-        </div>
+  <!-- 8. Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <a href="#hero" class="logo">
+          <span class="logo-text">Japolic</span>
+        </a>
+        <p class="footer-tagline">
+          High-performance distributed file system for AI and data-intensive workloads. Connecting servers to shared storage at local disk speeds.
+        </p>
+        <span class="footer-status">&#9679; All Systems Operational</span>
       </div>
 
-      <div class="footer-bottom-bar">
-        <div>
-          &copy; 2026 Japolic Technologies Inc. Built for Zyner Web Design Internship Assessment.
-        </div>
-        <div class="footer-bottom-links">
-          <span>Clean Semantic HTML5 &amp; Vanilla CSS3</span>
-          <span>Zero Frameworks</span>
-          <span>Accessibility Focused</span>
-        </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#benefits">Why Japolic</a></li>
+          <li><a href="#use-cases">Use Cases</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Target Audience</h4>
+        <ul>
+          <li><a href="#about">Developers</a></li>
+          <li><a href="#about">Engineering Teams</a></li>
+          <li><a href="#use-cases">AI &amp; ML Teams</a></li>
+          <li><a href="#benefits">Infrastructure Leaders</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="#inquiry">Request Technical Access</a></li>
+          <li><a href="mailto:engineering@japolic.io">engineering@japolic.io</a></li>
+          <li><a href="https://github.com/Sakeeb04/Zyner" target="_blank" rel="noopener">GitHub Project</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Japolic. Created by Sakeeb for the Zyner Web Design Internship Assessment.</p>
+        <p>Built with clean HTML5, CSS3, JavaScript, and React.</p>
       </div>
     </div>
   </footer>
-
-  <!-- =========================================================================
-       Assessment Specification Walkthrough Modal (For Evaluators)
-       ========================================================================= -->
-  <div class="modal-overlay" id="assessmentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
-    <div class="modal-window">
-      <div class="modal-header">
-        <h3 class="modal-title" id="modalTitle">Zyner Internship Assessment — Design Walkthrough &amp; Alignment</h3>
-        <button type="button" class="modal-close-btn" id="closeModalBtn" aria-label="Close Assessment Modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div>
-          <h3>Client Brief: Japolic</h3>
-          <p>
-            Japolic is a developer infrastructure company building a new type of high-performance file system. It allows developers to connect multiple servers to shared storage and access their data at speeds closer to local disks. It also works with S3, allowing teams to use lower-cost storage for large amounts of data while keeping frequently used data fast and accessible. The product is designed for AI applications and other data-intensive workloads.
-          </p>
-        </div>
-
-        <div>
-          <h3>Target Audience Alignment</h3>
-          <table class="modal-meta-table">
-            <tbody>
-              <tr>
-                <td>Developers (Primary)</td>
-                <td>Discover and test first. Prioritize 1-line installation, POSIX directory mounting, zero SDK rewrites, and command-line speed.</td>
-              </tr>
-              <tr>
-                <td>Engineering &amp; AI Teams</td>
-                <td>Focus on continuous DataLoader feeding, eliminating GPU starvation, and high-speed model checkpointing.</td>
-              </tr>
-              <tr>
-                <td>Infrastructure Leaders</td>
-                <td>Involved in the final buying decision. Focus on S3 cost efficiency, hardware optimization, and infrastructure scalability.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div>
-          <h3>Design &amp; Visual Strategy</h3>
-          <table class="modal-meta-table">
-            <tbody>
-              <tr>
-                <td>Style Direction</td>
-                <td>Clean, modern, confident, minimal, and professional developer infrastructure aesthetic. No generic AI gradients or noisy glassmorphism.</td>
-              </tr>
-              <tr>
-                <td>Color Palette</td>
-                <td>Deep obsidian canvas (#090B0E), refined hairline borders, and warm cadmium amber accents representing high-speed NVMe flash tiers.</td>
-              </tr>
-              <tr>
-                <td>Typography</td>
-                <td>Plus Jakarta Sans for sharp editorial headings and effortless legibility, paired with JetBrains Mono for POSIX commands and code.</td>
-              </tr>
-              <tr>
-                <td>Authenticity</td>
-                <td>Follows the brief strictly without inventing fake corporate statistics, fake customer testimonials, or unsupported business claims.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>

@@ -1,83 +1,54 @@
 import React from 'react';
 
-/**
- * Footer Component (Beginner Friendly)
- * Brand overview, links, and modal trigger.
- */
-export default function Footer({ onOpenModal }) {
+export default function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="container">
-        <div className="footer-top-grid">
-          <div className="footer-brand-col">
-            <div className="brand-logo">
-              <span className="logo-symbol">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
-              </span>
-              <span>JAPOLIC</span>
-            </div>
-            <p className="footer-desc">
-              Developer infrastructure company building a new type of high-performance distributed file system for AI applications and data-intensive workloads.
-            </p>
-            <div className="status-pill" style={{ width: 'fit-content' }}>
-              <span className="status-dot" aria-hidden="true"></span>
-              All Infrastructure Systems Normal
-            </div>
-          </div>
-
-          <div>
-            <h4 className="footer-col-title">Architecture</h4>
-            <ul className="footer-nav-list">
-              <li><a href="#about" className="footer-link">File System Design</a></li>
-              <li><a href="#solutions" className="footer-link">Distributed Mounts</a></li>
-              <li><a href="#solutions" className="footer-link">S3 Object Tiering</a></li>
-              <li><a href="#how-it-works" className="footer-link">POSIX Interface</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="footer-col-title">Target Audience</h4>
-            <ul className="footer-nav-list">
-              <li><a href="#about" className="footer-link">Developers</a></li>
-              <li><a href="#about" className="footer-link">Engineering Teams</a></li>
-              <li><a href="#use-cases" className="footer-link">AI &amp; ML Teams</a></li>
-              <li><a href="#benefits" className="footer-link">Infrastructure Leaders</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="footer-col-title">Assessment &amp; Contact</h4>
-            <ul className="footer-nav-list">
-              <li>
-                <button
-                  type="button"
-                  className="footer-link"
-                  onClick={onOpenModal}
-                  style={{ padding: 0, textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer' }}
-                >
-                  Internship Assessment Brief
-                </button>
-              </li>
-              <li><a href="#inquiry" className="footer-link">Request Access</a></li>
-              <li><a href="mailto:engineering@japolic.io" className="footer-link">engineering@japolic.io</a></li>
-              <li><a href="#hero" className="footer-link">Back to Top &uarr;</a></li>
-            </ul>
-          </div>
+    <footer className="footer">
+      <div className="container footer-container">
+        <div className="footer-col brand-col">
+          <a href="#hero" className="logo">
+            <span className="logo-text">Japolic</span>
+          </a>
+          <p className="footer-tagline">
+            High-performance distributed file system for AI and data-intensive workloads. Connecting servers to shared storage at local disk speeds.
+          </p>
+          <span className="footer-status">&#9679; All Systems Operational</span>
         </div>
 
-        <div className="footer-bottom-bar">
-          <div>
-            &copy; 2026 Japolic Technologies Inc. Built for Zyner Web Design Internship Assessment.
-          </div>
-          <div className="footer-bottom-links">
-            <span>React + Vite</span>
-            <span>Clean Vanilla CSS</span>
-            <span>Zero Python</span>
-          </div>
+        <div className="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#benefits">Why Japolic</a></li>
+            <li><a href="#use-cases">Use Cases</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-col">
+          <h4>Target Audience</h4>
+          <ul>
+            <li><a href="#about">Developers</a></li>
+            <li><a href="#about">Engineering Teams</a></li>
+            <li><a href="#use-cases">AI &amp; ML Teams</a></li>
+            <li><a href="#benefits">Infrastructure Leaders</a></li>
+          </ul>
+        </div>
+
+        <div className="footer-col">
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><a href="#inquiry">Request Technical Access</a></li>
+            <li><a href="mailto:engineering@japolic.io">engineering@japolic.io</a></li>
+            <li><a href="https://github.com/Sakeeb04/Zyner" target="_blank" rel="noopener noreferrer">GitHub Project</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <div className="container footer-bottom-inner">
+          <p>&copy; 2026 Japolic. Created by Sakeeb for the Zyner Web Design Internship Assessment.</p>
+          <p>Built with clean HTML5, CSS3, JavaScript, and React.</p>
         </div>
       </div>
     </footer>

@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Japolic — High-Performance File System for AI</title>
-  <meta name="description" content="Japolic connects multiple servers to shared storage at local disk speeds, integrated with S3 for AI and data-intensive workloads.">
-  
+  <meta name="description"
+    content="Japolic connects multiple servers to shared storage at local disk speeds, integrated with S3 for AI and data-intensive workloads.">
+
   <!-- Google Fonts: Plus Jakarta Sans for clean typography, JetBrains Mono for code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Navigation Bar -->
@@ -71,7 +76,8 @@
             Shared storage as fast as <span class="highlight">local disks.</span>
           </h1>
           <p class="hero-subtitle">
-            Japolic connects multiple servers to shared storage at local disk speeds. Works seamlessly with S3, so your team can use lower-cost storage for large amounts of data while keeping active files fast and accessible.
+            Japolic connects multiple servers to shared storage at local disk speeds. Works seamlessly with S3, so your
+            team can use lower-cost storage for large amounts of data while keeping active files fast and accessible.
           </p>
 
           <div class="hero-actions">
@@ -85,18 +91,16 @@
               <span class="terminal-label">Quick Mount Command</span>
               <button type="button" class="copy-btn" id="copyBtn">Copy</button>
             </div>
-            <code class="terminal-code" id="cmdText">curl -fsSL https://get.japolic.io | bash &amp;&amp; japolic mount /mnt/ai-data --tier s3://my-dataset</code>
+            <code class="terminal-code"
+              id="cmdText">curl -fsSL https://get.japolic.io | bash &amp;&amp; japolic mount /mnt/ai-data --tier s3://my-dataset</code>
           </div>
         </div>
 
         <!-- Hero Server Image -->
         <div class="hero-image-wrapper">
           <div class="image-frame">
-            <img 
-              src="assets/japolic_hero_servers.jpg" 
-              alt="Enterprise server racks in a modern AI datacenter" 
-              class="hero-img"
-            >
+            <img src="assets/japolic_hero_servers.jpg" alt="Enterprise server racks in a modern AI datacenter"
+              class="hero-img">
             <div class="image-caption">
               <div>
                 <strong>Shared Storage Cluster</strong>
@@ -115,7 +119,9 @@
           <span class="badge">What is Japolic?</span>
           <h2>Built for AI applications and heavy workloads</h2>
           <p class="section-desc">
-            Modern AI models require feeding massive amounts of data into multiple servers simultaneously. Traditional network filesystems create slow bottlenecks, while local disks on each server are expensive and hard to manage.
+            Modern AI models require feeding massive amounts of data into multiple servers simultaneously. Traditional
+            network filesystems create slow bottlenecks, while local disks on each server are expensive and hard to
+            manage.
           </p>
         </div>
 
@@ -124,7 +130,8 @@
             <div class="about-number">01</div>
             <h3>Connect Multiple Servers</h3>
             <p>
-              Attach dozens of compute nodes to a single shared storage pool without dealing with manual synchronization scripts or duplicated files.
+              Attach dozens of compute nodes to a single shared storage pool without dealing with manual synchronization
+              scripts or duplicated files.
             </p>
           </div>
 
@@ -132,7 +139,8 @@
             <div class="about-number">02</div>
             <h3>Local Disk Performance</h3>
             <p>
-              Access frequently used files at speeds closer to local NVMe drives. Keep GPUs and CPUs constantly busy instead of waiting for data to load.
+              Access frequently used files at speeds closer to local NVMe drives. Keep GPUs and CPUs constantly busy
+              instead of waiting for data to load.
             </p>
           </div>
 
@@ -140,7 +148,8 @@
             <div class="about-number">03</div>
             <h3>Seamless S3 Integration</h3>
             <p>
-              Keep your large datasets and archives in low-cost Amazon S3 storage. Japolic caches active files locally so you get the best of both worlds.
+              Keep your large datasets and archives in low-cost Amazon S3 storage. Japolic caches active files locally
+              so you get the best of both worlds.
             </p>
           </div>
         </div>
@@ -163,7 +172,8 @@
             <div class="solution-tag">Core Product</div>
             <h3>Distributed Shared File System</h3>
             <p>
-              A high-performance file system that spans across all your servers. Gives you standard Linux file paths like <code>/mnt/ai-data</code> so existing code works without any changes.
+              A high-performance file system that spans across all your servers. Gives you standard Linux file paths
+              like <code>/mnt/ai-data</code> so existing code works without any changes.
             </p>
             <ul class="feature-bullets">
               <li>Standard POSIX file system support</li>
@@ -176,7 +186,8 @@
             <div class="solution-tag">Storage Tiering</div>
             <h3>Intelligent S3 Cloud Tiering</h3>
             <p>
-              Automatically moves cold data to affordable S3 buckets while keeping active training batches ready on high-speed local storage.
+              Automatically moves cold data to affordable S3 buckets while keeping active training batches ready on
+              high-speed local storage.
             </p>
             <ul class="feature-bullets">
               <li>Direct integration with existing S3 buckets</li>
@@ -189,7 +200,8 @@
             <div class="solution-tag">AI Acceleration</div>
             <h3>Fast DataLoaders &amp; Caching</h3>
             <p>
-              Saturate PyTorch and TensorFlow data loaders by streaming training batches directly from high-speed memory and local flash tiers.
+              Saturate PyTorch and TensorFlow data loaders by streaming training batches directly from high-speed memory
+              and local flash tiers.
             </p>
             <ul class="feature-bullets">
               <li>Eliminates GPU idle wait times</li>
@@ -202,7 +214,8 @@
             <div class="solution-tag">Easy Deployment</div>
             <h3>Cluster &amp; Kubernetes Ready</h3>
             <p>
-              Works on bare-metal servers, on-premises datacenters, or cloud environments using standard mounts or Kubernetes CSI drivers.
+              Works on bare-metal servers, on-premises datacenters, or cloud environments using standard mounts or
+              Kubernetes CSI drivers.
             </p>
             <ul class="feature-bullets">
               <li>Simple 1-line installation script</li>
@@ -308,7 +321,8 @@
             <span class="usecase-pill">Use Case 01</span>
             <h3>Distributed AI Model Training</h3>
             <p>
-              When training models across multiple GPU servers, data loaders must read millions of samples continuously. Japolic keeps data readily cached so GPUs never sit idle.
+              When training models across multiple GPU servers, data loaders must read millions of samples continuously.
+              Japolic keeps data readily cached so GPUs never sit idle.
             </p>
           </div>
 
@@ -316,7 +330,8 @@
             <span class="usecase-pill">Use Case 02</span>
             <h3>Model Checkpointing &amp; Resume</h3>
             <p>
-              Writing huge checkpoint files from multiple nodes at once often freezes training. Japolic absorbs checkpoints quickly and syncs them to S3 in the background.
+              Writing huge checkpoint files from multiple nodes at once often freezes training. Japolic absorbs
+              checkpoints quickly and syncs them to S3 in the background.
             </p>
           </div>
 
@@ -324,22 +339,20 @@
             <span class="usecase-pill">Use Case 03</span>
             <h3>Data-Intensive Analytics</h3>
             <p>
-              Large ETL jobs and batch pipelines can read from a shared directory simultaneously without experiencing network storage slowdowns.
+              Large ETL jobs and batch pipelines can read from a shared directory simultaneously without experiencing
+              network storage slowdowns.
             </p>
           </div>
         </div>
 
         <!-- Architecture Spotlight Banner -->
         <div class="spotlight-card">
-          <img 
-            src="assets/japolic_storage_arch.jpg" 
-            alt="Japolic 3D storage architecture visual" 
-            class="spotlight-img"
-          >
+          <img src="assets/japolic_storage_arch.jpg" alt="Japolic 3D storage architecture visual" class="spotlight-img">
           <div class="spotlight-content">
             <h3>How the storage layers work together</h3>
             <p>
-              Servers connect to a fast local caching layer for instant read access. In the background, Japolic syncs with your S3 buckets so all your data remains safely stored at low cost.
+              Servers connect to a fast local caching layer for instant read access. In the background, Japolic syncs
+              with your S3 buckets so all your data remains safely stored at low cost.
             </p>
             <a href="#inquiry" class="btn btn-secondary">Contact Our Team</a>
           </div>
@@ -396,7 +409,8 @@
             <span class="badge">Contact Us</span>
             <h2>Ready to try Japolic on your cluster?</h2>
             <p class="section-desc">
-              Whether you are an engineer looking to test Japolic on your servers or an infrastructure lead wanting to optimize storage costs, we would love to help you get started.
+              Whether you are an engineer looking to test Japolic on your servers or an infrastructure lead wanting to
+              optimize storage costs, we would love to help you get started.
             </p>
 
             <ul class="contact-highlights">
@@ -458,7 +472,8 @@
 
               <div class="field-wrap">
                 <label for="message">Tell us about your project <span class="req">*</span></label>
-                <textarea id="message" name="message" class="input textarea" placeholder="What are your current storage bottlenecks or setup goals?" required></textarea>
+                <textarea id="message" name="message" class="input textarea"
+                  placeholder="What are your current storage bottlenecks or setup goals?" required></textarea>
                 <span class="error-msg" id="messageError">Please share a brief message (at least 10 characters).</span>
               </div>
 
@@ -469,7 +484,8 @@
             <div class="success-card" id="successCard">
               <div class="success-check">&#10003;</div>
               <h3>Thank you for reaching out!</h3>
-              <p>We have received your message. Our engineering team will review your requirements and reach out within 24 hours.</p>
+              <p>We have received your message. Our engineering team will review your requirements and reach out within
+                24 hours.</p>
               <div class="ref-badge" id="refBadge">REF: JAP-7842</div>
               <button type="button" class="btn btn-secondary btn-small" id="resetBtn">Send Another Message</button>
             </div>
@@ -488,7 +504,8 @@
           <span class="logo-text">Japolic</span>
         </a>
         <p class="footer-tagline">
-          High-performance distributed file system for AI and data-intensive workloads. Connecting servers to shared storage at local disk speeds.
+          High-performance distributed file system for AI and data-intensive workloads. Connecting servers to shared
+          storage at local disk speeds.
         </p>
         <span class="footer-status">&#9679; All Systems Operational</span>
       </div>
@@ -526,7 +543,7 @@
 
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>&copy; 2026 Japolic. Created by Sakeeb for the Zyner Web Design Internship Assessment.</p>
+        <p>&copy; 2026 Japolic. Created by <span class="footer-author">Sakeeb</span> for <span class="footer-client">Zyner</span></p>
         <p>Built with clean HTML5, CSS3, JavaScript, and React.</p>
       </div>
     </div>
@@ -534,4 +551,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

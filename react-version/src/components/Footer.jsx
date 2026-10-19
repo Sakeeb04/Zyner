@@ -47,7 +47,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
-          <p>&copy; 2026 Japolic. Created by Sakeeb for the Zyner Web Design Internship Assessment.</p>
+          <p>&copy; 2026 Japolic. Created by <span className="footer-author">Sakeeb</span> for <span className="footer-client">Zyner</span></p>
           <p>Built with clean HTML5, CSS3, JavaScript, and React.</p>
         </div>
       </div>

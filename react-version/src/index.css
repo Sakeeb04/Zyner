@@ -857,11 +857,12 @@ img {
   border-radius: 4px;
 }
 
-/* 12. Footer */
+/* 12. Footer (Deep Midnight Indigo & Bright Icy Accents) */
 .footer {
-  background-color: #07080b;
-  border-top: 1px solid var(--border);
+  background-color: #0c101d;
+  border-top: 1px solid rgba(56, 189, 248, 0.22);
   padding-top: 64px;
+  position: relative;
 }
 
 .footer-container {
@@ -875,9 +876,13 @@ img {
   margin-bottom: 12px;
 }
 
+.brand-col .logo-text {
+  color: #f0f6fc;
+}
+
 .footer-tagline {
-  color: var(--text-muted);
-  font-size: 0.9rem;
+  color: #94a3b8;
+  font-size: 0.92rem;
   line-height: 1.6;
   max-width: 320px;
   margin-bottom: 16px;
@@ -885,15 +890,22 @@ img {
 
 .footer-status {
   font-family: var(--font-code);
-  font-size: 0.75rem;
-  color: #10b981;
+  font-size: 0.78rem;
+  color: #38bdf8;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 4px 10px;
+  border-radius: 4px;
 }
 
 .footer-col h4 {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   text-transform: uppercase;
-  color: var(--text-main);
-  letter-spacing: 0.05em;
+  color: #f0f6fc;
+  letter-spacing: 0.08em;
   margin-bottom: 16px;
   font-family: var(--font-code);
 }
@@ -901,31 +913,44 @@ img {
 .footer-col ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .footer-col a {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  transition: color 0.2s;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  transition: all 0.2s ease;
 }
 
 .footer-col a:hover {
-  color: var(--text-main);
+  color: #38bdf8;
+  padding-left: 2px;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: #080b14;
+  border-top: 1px solid rgba(56, 189, 248, 0.15);
   padding: 24px 0;
-  font-size: 0.85rem;
-  color: var(--text-dim);
+  font-size: 0.88rem;
+  color: #94a3b8;
 }
 
 .footer-bottom-inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.footer-author {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.footer-client {
+  color: #f0f6fc;
+  font-weight: 600;
 }
 
 /* 13. Responsive Styles */

@@ -102,6 +102,20 @@ img {
   box-sizing: border-box;
 }
 
+/* Ensure CSS Grid items never force tracks wider than viewport */
+.hero-container > *,
+.about-grid > *,
+.solutions-grid > *,
+.benefits-grid > *,
+.usecases-grid > *,
+.steps-row > *,
+.spotlight-card > *,
+.contact-grid > *,
+.footer-container > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .section {
   padding: 80px 0;
   border-top: 1px solid var(--border);
@@ -403,6 +417,11 @@ img {
   gap: 48px;
 }
 
+.hero-text {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .hero-title {
   font-size: 3.2rem;
   line-height: 1.15;
@@ -427,6 +446,7 @@ img {
   line-height: 1.65;
   margin-bottom: 32px;
   max-width: 560px;
+  width: 100%;
   word-break: break-word;
   overflow-wrap: break-word;
 }
@@ -444,7 +464,11 @@ img {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 14px 18px;
+  width: 100%;
   max-width: 560px;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .terminal-bar {
@@ -456,6 +480,7 @@ img {
   margin-bottom: 8px;
   text-transform: uppercase;
   font-family: var(--font-code);
+  gap: 8px;
 }
 
 .copy-btn {
@@ -482,15 +507,20 @@ img {
   font-family: var(--font-code);
   font-size: 0.85rem;
   color: #ddd6fe;
+  max-width: 100%;
+  width: 100%;
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 4px;
+  box-sizing: border-box;
 }
 
 /* Hero Image */
 .hero-image-wrapper {
   position: relative;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .image-frame {
@@ -818,6 +848,9 @@ img {
   font-size: 0.75rem;
   color: #ddd6fe;
   overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 
 /* 11. Contact Form */

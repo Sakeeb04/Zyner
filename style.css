@@ -60,12 +60,14 @@ html {
   background-color: var(--bg);
   color: var(--text-main);
   font-family: var(--font-main);
+  overflow-x: hidden;
 }
 
 body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+  width: 100%;
   background-color: var(--bg);
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
@@ -97,6 +99,7 @@ img {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .section {
@@ -362,10 +365,14 @@ img {
   right: 0;
   background-color: var(--bg);
   border-bottom: 1px solid var(--border);
-  padding: 24px;
+  padding: 20px 24px 28px;
   flex-direction: column;
   gap: 16px;
   z-index: 99;
+  max-height: calc(100vh - 72px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
 }
 
 .mobile-drawer.active {
@@ -402,6 +409,9 @@ img {
   font-weight: 800;
   letter-spacing: -0.03em;
   margin-bottom: 20px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .highlight {
@@ -417,6 +427,8 @@ img {
   line-height: 1.65;
   margin-bottom: 32px;
   max-width: 560px;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-actions {
@@ -456,6 +468,7 @@ img {
   font-size: 0.75rem;
   font-family: var(--font-code);
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .copy-btn:hover {
@@ -471,6 +484,8 @@ img {
   color: #ddd6fe;
   overflow-x: auto;
   white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
 }
 
 /* Hero Image */
@@ -1066,6 +1081,15 @@ img {
 /* ─── Tablet: 1024px ─── */
 @media (max-width: 1024px) {
 
+  /* Nav Links spacing */
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
   /* Hero */
   .hero-section {
     padding: 56px 0 72px;
@@ -1077,7 +1101,7 @@ img {
   }
 
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 
   .hero-subtitle {
@@ -1141,10 +1165,9 @@ img {
   }
 }
 
-/* ─── Mobile: 768px ─── */
-@media (max-width: 768px) {
+/* ─── Tablet / Small Laptop: 900px (Switch to Hamburger) ─── */
+@media (max-width: 900px) {
 
-  /* Navigation */
   .nav-links {
     display: none;
   }
@@ -1157,12 +1180,15 @@ img {
     display: flex;
   }
 
-  /* Keep theme toggle visible on mobile */
   .theme-toggle {
     display: flex;
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
   }
+}
+
+/* ─── Mobile: 768px ─── */
+@media (max-width: 768px) {
 
   /* Sections */
   .section {
@@ -1171,16 +1197,18 @@ img {
 
   /* Hero */
   .hero-section {
-    padding: 40px 0 56px;
+    padding: 36px 0 52px;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: clamp(1.85rem, 5.5vw, 2.25rem);
     letter-spacing: -0.025em;
+    line-height: 1.2;
   }
 
   .hero-subtitle {
     font-size: 1rem;
+    line-height: 1.6;
   }
 
   .hero-actions {
@@ -1198,7 +1226,7 @@ img {
     aspect-ratio: 16 / 9;
   }
 
-  /* About: back to 1-col */
+  /* About: 1-col */
   .about-grid {
     grid-template-columns: 1fr;
   }
@@ -1220,14 +1248,24 @@ img {
     margin-bottom: 32px;
   }
 
-  /* Comparison table — make it scroll */
+  /* Comparison table — smooth scrolling */
   .table-wrap {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
   }
 
   .simple-table {
-    min-width: 560px;
+    min-width: 540px;
+  }
+
+  .simple-table th,
+  .simple-table td {
+    padding: 12px 14px;
+  }
+
+  .comparison-card {
+    padding: 22px 16px;
   }
 
   /* Steps: 1-col */
@@ -1291,7 +1329,7 @@ img {
 @media (max-width: 480px) {
 
   .hero-title {
-    font-size: 1.7rem;
+    font-size: clamp(1.6rem, 5vw, 1.85rem);
   }
 
   .hero-subtitle {
@@ -1299,19 +1337,19 @@ img {
   }
 
   .hero-section {
-    padding: 32px 0 48px;
+    padding: 28px 0 44px;
   }
 
   .section {
-    padding: 44px 0;
+    padding: 42px 0;
   }
 
   .section-intro h2 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 
   .contact-details h2 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 
   .terminal-card {
@@ -1326,15 +1364,15 @@ img {
   .solution-card,
   .usecase-card,
   .step-box {
-    padding: 22px 18px;
+    padding: 20px 16px;
   }
 
   .benefit-item {
-    padding: 18px 16px;
+    padding: 16px 14px;
   }
 
   .comparison-card {
-    padding: 20px 16px;
+    padding: 18px 14px;
   }
 
   .spotlight-content {
@@ -1348,11 +1386,40 @@ img {
 
   /* Compact footer */
   .footer {
-    padding-top: 44px;
+    padding-top: 40px;
   }
 
   .container {
     padding: 0 16px;
+  }
+}
+
+/* ─── Extra Small Mobile: 360px ─── */
+@media (max-width: 360px) {
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .hero-title {
+    font-size: 1.45rem;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 0.88rem;
+  }
+
+  .terminal-card {
+    padding: 10px 12px;
+  }
+
+  .terminal-code {
+    font-size: 0.72rem;
+  }
+
+  .form-container {
+    padding: 18px 12px;
   }
 }
 
